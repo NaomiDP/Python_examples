@@ -1,0 +1,14 @@
+# 1.Acest program va rezolva ecuatia de gradul 1. a+b*x=c
+print ("a+b*x=c")
+a=int(input("a="))
+b=int(input("b="))
+c=int(input("c="))
+print(a,b,c)
+if b != 0:
+    print ("Este o ecuatie de gradul 1!")
+    print("x=")
+    x=(c-a)/b
+    print (x)
+    
+else: 
+    print("Nu este o ecuatie de gradul 1!")
