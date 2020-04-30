@@ -1,0 +1,8 @@
+a=int(input("a="))
+b=int(input("b="))
+print ("a+b =",a+b)
+c=a+b
+if c >= 0:
+   print("Positive")
+else:
+     print("Negative")
