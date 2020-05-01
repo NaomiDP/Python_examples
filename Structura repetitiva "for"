@@ -1,0 +1,9 @@
+N=10
+v=[0]*N
+for i in range (N):
+    if i%2==1:
+         a=0
+    else: a=i
+    v[i]=a
+print (v)
+print("Suma elementelor=", sum(v))
