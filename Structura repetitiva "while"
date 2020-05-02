@@ -1,0 +1,8 @@
+i=0
+while True :
+    i+=1
+    c=input("cuvantul "+str(i)+"=")
+    if len(c)==0:
+       break
+    else:
+        print(c + " " + str(len(c)))
