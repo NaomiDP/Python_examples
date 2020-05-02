@@ -1,0 +1,12 @@
+x = int(input("Numarul de elemente din vector: x="))
+v=[0]*x
+print("Dati elemente de la tastatura")
+for i in range(x):
+    a = int(input(""))
+    v[i] = a
+print("Vectorul este ", v)
+maxi=v[0]
+for i in range(x):
+    if v[i] >= maxi:
+        maxi = v[i]
+print("Maximul este ", maxi)
