@@ -1,0 +1,31 @@
+print("Introduceti un punct de forma (x,y) din sistemul de coordonate ")
+def punct():
+    N=2
+    tab = [int(input('tab['+str(i)+']=')) for i in range (N)]
+    for i in range(N):
+        print(tab[i], end=' ')
+    if tab[0]>0:
+        if tab[1]>0:
+            print("Punctul se afla in primul cadran")
+        else: print("Punctul se afla in cadranul IV")
+    else:
+        if tab[1]>0:
+            print("Punctul se afla in cadranul II")
+        else: print("Punctul se afla in cadranul III")
+punct()
+
+while True:
+    print("Doriti sa introduceti in alt punct? Introduceti 'A'\nVreti sa parasiti programul? Introduceti 'X'")
+    choice = input("\nYour option: ")
+    
+    if choice.upper() == 'A':
+        punct()
+        input()
+
+    elif choice.upper() == 'X':
+        print("Quitting program...")
+        break
+
+    else:
+        print("Invalid option")
+        input()
