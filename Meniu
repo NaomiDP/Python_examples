@@ -1,0 +1,48 @@
+flag = False
+def meniu(): print("Operatii cu nr complexe:\n[C] citire 2 nr complexe\n[+] adunare\n[-] scadere\n[*] inmultire\n[/] impartire\n[X] exit")
+
+while True:
+    meniu()
+    choice = input("\nYour option: ")
+    
+    if choice.upper() == 'C':
+        flag = True
+        print("Introduceti doua numere complexe de forma: x+yj")
+        a=complex(input("Enter a: "))
+        b=complex(input("Enter b: "))
+        input()
+
+    elif choice.upper() == '+' and flag == True:
+        c=a+b
+        print("c=", c)
+        input()
+
+    elif choice.upper() == '-' and flag == True:
+        s=a-b
+        print("s=", s)
+        input()
+    
+    elif choice.upper() == '*' and flag == True:
+        i=a*b
+        print("i=", i)
+        input()
+
+    elif choice.upper() == '/' and flag == True:
+        im=a/b
+        print("im=", im)
+        input()
+    
+    elif choice.upper() == 'X':
+        print("Quitting program...")
+        break
+
+    elif flag == False:
+        if choice.upper() == 'B' or choice.upper() == 'C' or choice.upper() == '+' or choice.upper() == '-' or choice.upper() == '*' or choice.upper() == '/':
+            print("Nu ati citit numerele complexe")
+            input()
+        else:
+            print("No such option")
+            input()
+    else:
+        print("No such option")
+        input() 
