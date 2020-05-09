@@ -1,0 +1,14 @@
+n=int(input("n="))
+m=int(input("m="))
+mat = [[0 for j in range(m)] for i in range(n)]
+print ('Matrice (',n,'x',m,'):')
+for i in range(n):
+    print (*mat[i], end = ' ')
+    print()
+mat = [[0 for j in range(m)] for i in range (n)]
+for i in range(n):
+    mat[i] = [float(x) for x in input ('Dati elementele de pe linia '+str(i)+':').split()]
+print ('Matrice (',n,'x',m,'):')
+for i in range (n) :
+    print(*mat[i],end = ' ')
+    print()
