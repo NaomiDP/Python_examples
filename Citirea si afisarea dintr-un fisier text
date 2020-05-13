@@ -1,0 +1,53 @@
+def afisare():
+    f = open ('poli.txt', 'r')
+    lst = list(f)
+    f.close()
+    for i in range (len(lst)):
+        print(i+1, ':\t', lst[i])
+
+def citireFisier(dicText):
+    with open('poli.txt', "r")as f:
+        gr=[int(x) for x in f.readline().split()]
+        coef=[int(x) for x in f.readline().split()]
+    for i in range(len(gr)):
+        dicText[gr[i]]=coef[i]
+    print (dicText)
+    return dicText, True
+
+def info_autor():
+    print("Nume:\tNaomiDP")
+
+flag = False
+def meniu(): print("1. Citirea din fisier text\n2. Afisarea\n3. Info autor\n4. Termina program")
+
+while True:
+    meniu()
+    choice = input("\nOptiunea dumneavoastra: ")
+    dicText={}
+    if choice == '1':
+        flag = True
+        citireFisier(dicText)
+        input()
+    
+    elif choice == '2' and flag == True:
+        afisare()
+        input()
+
+    elif choice == '3':
+        info_autor()
+        input()
+
+    elif choice == '4':
+        print("Termina program!")
+        break
+
+    elif flag == False:
+        if choice == '1' or choice == '2':
+            print("Nu ati citit polinomul")
+            input()
+        else:
+            print("Optiune inexistenta!")
+            input()
+    else:
+        print("Optiune inexistenta!")
+        input() 
