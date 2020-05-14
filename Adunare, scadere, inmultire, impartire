@@ -1,0 +1,8 @@
+a=int(input("a= "))
+b=int(input("b= "))
+print("a+b=", a+b)
+print("a-b=", a-b)
+print("a*b=", a*b)
+if b == 0:
+    print("a/b=\nb==o!!!")
+else: print("a/b=", a/b)
