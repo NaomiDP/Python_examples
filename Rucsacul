@@ -1,0 +1,89 @@
+def citire (n,V):
+    p=[int(input('p['+str(i)+']=')) for i in range(n)]
+    for i in range (n):
+        print(p[i], end=' ')
+    print("\n")   
+    v=[int(input('v['+str(i)+']=')) for i in range(n)]
+    for i in range (n):
+        print(v[i], end=' ')
+    print("\n")
+    return (v,p)
+
+def citire_pv(n,v):
+    pv=[0 for i in range(n)]
+    for i in range (n):
+        pv[i]=p[i]/v[i]
+    print("\n")
+    return (pv)
+
+def info_autor():
+    print("Nume:Pauliuc Naomi-Denisa\nGrupa:3112B")
+
+flag = False
+def meniu(): print("1.Citire\n2Afisare date citite\n3.Sortare descrescator raportul pi/vi\n4.Rezolvare program\nI.Informatii autor\nX.Exit")
+
+while True:
+    meniu()
+    choice = input("\nOptiunea dumneavoastra ")
+    
+    if choice == '1':
+        v={}
+        p={}
+        flag = True
+        n=int(input("Introduceti un numar de obiecte: "))
+        V=int(input("Introduceti volumul rucsacului: "))
+        v,p=citire(n,V)
+        pv={}
+        pv=citire_pv(n, v)
+        input()
+
+    elif choice == '2' and flag == True:
+        print("p: ", p)
+        print("v: ", v)
+        print("----------------------")
+        print("p/v: ", pv)
+        input()
+
+    elif choice == '3' and flag == True:
+        pv.sort(reverse=True)
+        print("p/v: ", pv)
+        input()
+
+    elif choice == '4' and flag ==True:
+        x=[0 for i in range(n)]
+        i=0
+        vt=pt=0
+        while vt<V and i<=n:
+            if vt+v[i]<=V:
+                x[i]=1
+                pt=pt+p[i]
+                vt=vt+v[i]
+            else:
+                x[i]=(V-vt)/v[i]
+                vt=V
+                pt=pt+p[i]*x[i]
+            i=i+1
+        print("Pretul total al obiectelor din rucsac=", pt, "Volumul ocupat", vt)
+        print("In rucsac s-au introdus:")
+        for i in range (n):
+            if x[i]>0:
+                print("-obiectul ",i," (", v[i]*x[i],",",p[i], ")")
+
+    elif choice.upper() == 'I':
+        info_autor()
+        input()
+    
+    elif choice.upper() == 'X':
+        print("Parasire program...")
+        break
+
+    elif flag == False:
+        if choice == '2' or  choice == '3' or  choice == '4':
+            print("Nu ati citit datele!")
+            input()
+        else:
+            print("Optiune inexistenta!")
+            input()
+    else:
+        print("Optiune inexistenta!")
+        input() 
